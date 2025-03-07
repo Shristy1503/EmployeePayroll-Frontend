@@ -1,0 +1,28 @@
+<h2>Employee List</h2>
+<button class="add-btn" (click)="addEmployee()">+ Add Employee</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+      <th>Department</th>
+      <th>Start Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees; let i = index">
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.salary }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.department }}</td>
+      <td>{{ emp.startDate }}</td>
+      <td>
+        <button class="edit-btn" (click)="editEmployee(i)">Edit</button>
+        <button class="delete-btn" (click)="deleteEmployee(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
